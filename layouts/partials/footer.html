@@ -26,10 +26,9 @@
           </li>
           {{ end }}
         </ul>
+        <p class="credits theme-by text-muted">
         <!-- Please don't remove this, keep my open source work credited :) -->
-        <!-- defn: I'll put this back once I learn enough CSS to reformat -->
-        <!-- {{ i18n "poweredBy" . | safeHTML }} -->
-        <!-- {{ with .Site.Params.commit }}&nbsp;&bull;&nbsp;[<a href="{{.}}{{ getenv "GIT_COMMIT_SHA" }}">{{ getenv "GIT_COMMIT_SHA_SHORT" }}</a>]{{ end }} -->
+        {{ i18n "poweredBy" . | safeHTML }}
         </p>
       </div>
     </div>
