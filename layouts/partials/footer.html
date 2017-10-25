@@ -26,27 +26,10 @@
           </li>
           {{ end }}
         </ul>
-        <p class="credits copyright text-muted">
-          {{ if .Site.Author.name }}
-            {{ if .Site.Author.website }}
-              <a href="{{ .Site.Author.website }}">{{ .Site.Author.name }}</a>
-            {{ else }}
-              {{ .Site.Author.name }}
-            {{ end }}          
-          {{ end }}
-          
-          &nbsp;&bull;&nbsp;
-          {{ .Site.LastChange.Format "2006" }}
-
-          {{ if .Site.Title }}
-            &nbsp;&bull;&nbsp;
-            <a href="{{ "" | absLangURL }}">{{ .Site.Title }}</a>
-          {{ end }}
-        </p>
         <!-- Please don't remove this, keep my open source work credited :) -->
-        <p class="credits theme-by text-muted">
-          {{ i18n "poweredBy" . | safeHTML }}
-          {{ with .Site.Params.commit }}&nbsp;&bull;&nbsp;[<a href="{{.}}{{ getenv "GIT_COMMIT_SHA" }}">{{ getenv "GIT_COMMIT_SHA_SHORT" }}</a>]{{ end }}
+        <!-- defn: I'll put this back once I learn enough CSS to reformat -->
+        <!-- {{ i18n "poweredBy" . | safeHTML }} -->
+        <!-- {{ with .Site.Params.commit }}&nbsp;&bull;&nbsp;[<a href="{{.}}{{ getenv "GIT_COMMIT_SHA" }}">{{ getenv "GIT_COMMIT_SHA_SHORT" }}</a>]{{ end }} -->
         </p>
       </div>
     </div>
@@ -64,19 +47,5 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
 <script src="{{ "/bh/js/load-photoswipe.js" | absURL }}"></script>
-<!-- Google Custom Search Engine -->
-{{ if .Site.Params.gcse }}
-<script>
-  (function() {
-    var cx = '{{ .Site.Params.gcse }}';
-    var gcse = document.createElement('script');
-    gcse.type = 'text/javascript';
-    gcse.async = true;
-    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(gcse, s);
-  })();
-</script>
-{{ end }}
 
 {{- partial "footer_custom.html" . }}
